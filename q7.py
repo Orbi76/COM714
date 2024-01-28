@@ -8,7 +8,6 @@ def display_left(phrase):
     length = len(phrase) + 4
     print(" " * (length -2) + "-" * length)
     print(f"{phrase}  |{' ' * (length-2)}|")
- #   print(f"{phrase}| {' ' * (length - len(phrase))}|")
     print(" " * (length-2) + "-" * length)
 
 def display_right(phrase):
