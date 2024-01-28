@@ -17,7 +17,7 @@ def display_right(phrase):
     print("-" * length)
 
 def display_grid(phrase, size):
-    rowLength = len(phrase) * size +(size-1)+2 +2
+    rowLength = len(phrase) * size +(size-1)+2 +2 # +2 for the | character at the beginning and the end and +2 for the spaces
     print("-" * rowLength)
     for _ in range(size):
         row = "| " + " ".join([phrase] * size) + " |"
