@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6ae37c5-a52b-44e9-87f0-a59261e68213" name="Changes" comment="changed location">
-      <change afterPath="$PROJECT_DIR$/life/planet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/life/test_planet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/life/universe.py" afterDir="false" />
+    <list default="true" id="f6ae37c5-a52b-44e9-87f0-a59261e68213" name="Changes" comment="human.py, planet.py , test_planet.py, universe.py are done">
+      <change afterPath="$PROJECT_DIR$/life/test_universe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/life/human.py" beforeDir="false" afterPath="$PROJECT_DIR$/life/human.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/life/universe.py" beforeDir="false" afterPath="$PROJECT_DIR$/life/universe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +48,8 @@
     "last_opened_file_path": "/Users/gabor/Documents/Solent/5 Masters/COM714"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for test_planet.TestPlanet">
-    <configuration name="dog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.universe">
+    <configuration name="universe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="COM714" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -59,33 +57,18 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/life" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dog.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/life/universe.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_planet.TestPlanet" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="COM714" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/life" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_planet.TestPlanet&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests for test_planet.TestPlanet.test_add_human" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -118,7 +101,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_planet.TestPlanet.test_population" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_universe.TestUniverse" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="COM714" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -129,17 +112,32 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_planet.TestPlanet.test_population&quot;" />
+      <option name="_new_target" value="&quot;test_universe.TestUniverse&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_universe.TestUniverse.test_add_planet" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="COM714" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/life" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_universe.TestUniverse.test_add_planet&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_planet.TestPlanet" />
-        <item itemvalue="Python tests.Python tests for test_planet.TestPlanet.test_add_human" />
+        <item itemvalue="Python.universe" />
         <item itemvalue="Python tests.Python tests for test_planet.TestPlanet.test_has" />
-        <item itemvalue="Python tests.Python tests for test_planet.TestPlanet.test_population" />
-        <item itemvalue="Python.dog" />
+        <item itemvalue="Python tests.Python tests for test_universe.TestUniverse.test_add_planet" />
+        <item itemvalue="Python tests.Python tests for test_universe.TestUniverse" />
+        <item itemvalue="Python tests.Python tests for test_planet.TestPlanet.test_add_human" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707488064315</updated>
-      <workItem from="1707488065433" duration="13255000" />
+      <workItem from="1707488065433" duration="24444000" />
     </task>
     <task id="LOCAL-00001" summary="changed location">
       <created>1707488874377</created>
@@ -181,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707493174042</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="human.py, planet.py , test_planet.py, universe.py are done">
+      <created>1707582137991</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707582137991</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,10 +205,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed location" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed location" />
+    <MESSAGE value="human.py, planet.py , test_planet.py, universe.py are done" />
+    <option name="LAST_COMMIT_MESSAGE" value="human.py, planet.py , test_planet.py, universe.py are done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COM714$dog.coverage" NAME="dog Coverage Results" MODIFIED="1707579438644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/COM714$.coverage" NAME=" Coverage Results" MODIFIED="1707582032352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/life" />
+    <SUITE FILE_PATH="coverage/COM714$.coverage" NAME=" Coverage Results" MODIFIED="1707599949533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/life" />
+    <SUITE FILE_PATH="coverage/COM714$universe.coverage" NAME="universe Coverage Results" MODIFIED="1707601211882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/life" />
   </component>
 </project>
