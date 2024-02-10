@@ -28,6 +28,9 @@ class Universe:
         return len(self.__planets)
 
 
+    def get_name(self) -> str:
+        return  self.__name
+
 
 vilag = Universe("Vilag")
 
@@ -35,4 +38,5 @@ planet1 = vilag.generate("Earth")
 planet2 = vilag.generate("Mars")
 
 vilag.display()
-print ( "Hello. This ", vilag._Universe__name, "univers has", vilag.numberOfPlanets(), "planet(s)!", )
+print ( "Hello. This", vilag._Universe__name, "univers has", vilag.numberOfPlanets(), "planet(s)!", )
+print ( "Hello. This", vilag.get_name(), "univers has", vilag.numberOfPlanets(), "planet(s)!", )
