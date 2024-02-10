@@ -2,6 +2,7 @@ class Human:
     MAX_ENERGY = 100
     REPRODUCE_ENERGY_COST = 20
     ENERGY_TO_MOVE = 10
+    MIN_ENERGY = 20
 
     def __init__(self, name: str, age: int = 0, energy: int = 100) -> None:
         self.name = name
