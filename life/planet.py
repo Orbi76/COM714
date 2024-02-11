@@ -3,7 +3,7 @@ from life.human import Human
 
 class Planet:
 
-    def __init__(self, name:str=''):
+    def __init__(self, name: str = ''):
         self.__name = name
         self.__humans = []
 

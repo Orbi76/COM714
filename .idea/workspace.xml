@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6ae37c5-a52b-44e9-87f0-a59261e68213" name="Changes" comment="human.py, planet.py , test_planet.py, universe.py are done" />
+    <list default="true" id="f6ae37c5-a52b-44e9-87f0-a59261e68213" name="Changes" comment="human.py, planet.py , test_planet.py, universe.py are done">
+      <change afterPath="$PROJECT_DIR$/life/nonplanet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/life/planet.py" beforeDir="false" afterPath="$PROJECT_DIR$/life/planet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/life/universe.py" beforeDir="false" afterPath="$PROJECT_DIR$/life/universe.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +150,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707488064315</updated>
-      <workItem from="1707488065433" duration="24926000" />
+      <workItem from="1707488065433" duration="34490000" />
     </task>
     <task id="LOCAL-00001" summary="changed location">
       <created>1707488874377</created>
@@ -189,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707601657932</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="human.py, planet.py , test_planet.py, universe.py are done">
+      <created>1707601914899</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707601914899</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +226,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COM714$dog.coverage" NAME="dog Coverage Results" MODIFIED="1707579438644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/COM714$.coverage" NAME=" Coverage Results" MODIFIED="1707599949533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/life" />
-    <SUITE FILE_PATH="coverage/COM714$universe.coverage" NAME="universe Coverage Results" MODIFIED="1707601551110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/life" />
+    <SUITE FILE_PATH="coverage/COM714$universe.coverage" NAME="universe Coverage Results" MODIFIED="1707613018097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/life" />
   </component>
 </project>
