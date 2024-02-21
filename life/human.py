@@ -1,13 +1,24 @@
+from typing import List
+from life.clothing import Clothing
+
+
+
+
 class Human:
     MAX_ENERGY = 100
     REPRODUCE_ENERGY_COST = 20
     ENERGY_TO_MOVE = 10
     MIN_ENERGY = 20
 
-    def __init__(self, name: str, age: int = 0, energy: int = 100) -> None:
+    def __init__(self, name: str, clothing:List[str], age: int = 0, energy: int = 100) -> None:    # the undefault arguments has to be before the default arguments.
+
         self.name = name
+        self.clothing = clothing
         self.age = age
         self.energy = energy
+
+
+
 
 
     def __repr__(self) -> str:
@@ -30,12 +41,12 @@ class Human:
            # return max(0, amount - self.MAX_ENERGY + self.energy)
 
 
-    def reproduce(self) -> bool:
-        if self.energy >= self.REPRODUCE_ENERGY_COST:
-            self.energy -= self.REPRODUCE_ENERGY_COST
-            return True
-        else:
-            return False
+    # def reproduce(self) -> bool:
+    #     if self.energy >= self.REPRODUCE_ENERGY_COST:
+    #         self.energy -= self.REPRODUCE_ENERGY_COST
+    #         return True
+    #     else:
+    #         return False
 
     def move(self, distance: int) -> bool:
         if self.energy >= self.ENERGY_TO_MOVE:
@@ -43,6 +54,11 @@ class Human:
             return True
         else:
             return False
+
+    def dress(self, clothing: Clothing) -> None:
+        self.__clothing.append(colthing)
+
+
 
 
 

@@ -1,5 +1,7 @@
-from life.planet import Planet
+from typing import List
 from life.nonplanet import NonPlanet
+from life.planet import Planet
+
 
 class Universe:
 
@@ -30,6 +32,11 @@ class Universe:
             non_planet = NonPlanet(name, population)
             self.__non_planets.append(non_planet)
             return non_planet
+
+    # def generate3(self, names: List[str]) -> None:
+
+
+
 
 
     def display(self) -> None:

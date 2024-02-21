@@ -15,3 +15,4 @@ class Dog:
 kon= Dog('kon', 7)
 print(kon.description())
 print(kon.speak("vau"))
+
