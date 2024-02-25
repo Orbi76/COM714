@@ -4,6 +4,7 @@ from life.planet import Planet
 
 
 class Universe:
+    planets = List[Planet]
 
     def __init__(self, name: str = ''):
         self.__name = name
@@ -11,13 +12,14 @@ class Universe:
         self.__non_planets = []
 
 
- #   def __repr__(self):
- #       return f"Univers has (name='{self.__planets}' planets)"
+
+
 
  #   def __str__(self):
  #       return f"This universe has something."
 
-
+    #   def __repr__(self):
+    #       return f"Univers has (name='{self.__planets}' planets)"
     def generate(self,name: str = '') -> Planet:
         planet = Planet(name)
         self.__planets.append(planet)
