@@ -1,0 +1,329 @@
+<mxfile host="Electron" modified="2024-02-29T23:49:32.075Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="4AayYlwaxkS533LxsMqH" version="23.1.5" type="device">
+  <diagram name="Page-1" id="YaoCbUS0WncdZ_e-gv4r">
+    <mxGraphModel dx="1837" dy="945" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="40" width="560" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-2" value="Trip Coordinator&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="910" y="130" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-3" value="Log In" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="100" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-4" value="Display error message" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="675" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-5" value="Veryfie Password" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-3" edge="1" target="wh8bpn0YN4yziQ9TIbQ0-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="350" as="sourcePoint" />
+            <mxPoint x="721.0999999999999" y="125.30860000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-44" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="wh8bpn0YN4yziQ9TIbQ0-7">
+          <mxGeometry x="-0.0041" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-4" target="wh8bpn0YN4yziQ9TIbQ0-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="350" as="sourcePoint" />
+            <mxPoint x="610" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-45" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="wh8bpn0YN4yziQ9TIbQ0-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-15" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-2" target="wh8bpn0YN4yziQ9TIbQ0-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="350" as="sourcePoint" />
+            <mxPoint x="530" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-16" value="Create Trip" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="540" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-17" value="View Trip" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="547.5" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-18" value="Update Trip" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="547.5" y="470" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-20" value="Delete Trip" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="547.5" y="600" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-21" value="Assign Trip coordinator to trip" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="570" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-22" value="Define trip details, include name, start date, duration, and contact information." style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="710" y="710" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-23" value="Trip management" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="547.5" y="40" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-24" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-2" target="wh8bpn0YN4yziQ9TIbQ0-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="170" as="sourcePoint" />
+            <mxPoint x="610" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-25" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-2" target="wh8bpn0YN4yziQ9TIbQ0-17" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="170" as="sourcePoint" />
+            <mxPoint x="410" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-26" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-2" target="wh8bpn0YN4yziQ9TIbQ0-18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="180" as="sourcePoint" />
+            <mxPoint x="410" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-27" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-2" target="wh8bpn0YN4yziQ9TIbQ0-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="202" as="sourcePoint" />
+            <mxPoint x="410" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1000" y="40" width="560" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-29" value="Trip leg management" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1205" y="40" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-30" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1640" y="40" width="560" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-33" value="Traveller management" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1815" y="40" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wh8bpn0YN4yziQ9TIbQ0-34" value="Traveller" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="100" y="230" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-1" value="Administrator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="910" y="440" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-4" value="Book a trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="210" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-8" value="Trip Manager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="910" y="310" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-21" target="hrPoILadW02tqHUXYrE0-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-21" target="hrPoILadW02tqHUXYrE0-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-21" target="hrPoILadW02tqHUXYrE0-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-21" target="hrPoILadW02tqHUXYrE0-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-21" target="hrPoILadW02tqHUXYrE0-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-21" value="Trip Coordinator" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="1480" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-22" value="Manage passengers for a trip." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="1600" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-23" value="Update trip legs for a trip." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="1600" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-24" value="Generate trip itineraries." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1395" y="1600" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-25" value="Handle payments and generate receipts." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="1600" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1320" width="520" height="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-27" value="View passanger details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1460" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-28" value="Add passanger to database" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1370" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-29" value="Edit passanger details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1550" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-30" value="Delete passanger from database" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-31" value="Trip coordinator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1600" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-32" value="Assign passanger to a trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1760" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-33" value="Crate trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="547.5" y="1370" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-34" value="View trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="547.5" y="1460" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-35" value="Edit trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="547.5" y="1550" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-36" value="Delete trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="547.5" y="1650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-38" value="Generate trip itineraries" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="547.5" y="1760" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-39" value="Generate receipt" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1760" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-40" value="Delete receipt" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-41" value="Edit receipt" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1550" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-42" value="View receipt" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1460" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-43" value="Create receipt" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1370" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-46" value="Delete passanger from a trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1860" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-47" value="Trip management" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1320" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-68" target="hrPoILadW02tqHUXYrE0-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-68" target="hrPoILadW02tqHUXYrE0-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-68" target="hrPoILadW02tqHUXYrE0-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-68" value="Trip Manager" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="1240.5" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-73" target="hrPoILadW02tqHUXYrE0-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-73" target="hrPoILadW02tqHUXYrE0-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-73" target="hrPoILadW02tqHUXYrE0-79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hrPoILadW02tqHUXYrE0-73" target="hrPoILadW02tqHUXYrE0-80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-73" value="Administrator" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="1000" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-74" value="Perform all tasks of a Trip Coordinator." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="1356.5" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-75" value="Create, view, update, and delete trip coordinators." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="1356.5" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-76" value="Generate total invoices for trips they manage." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="1356.5" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-77" value="Perform all tasks of Trip Manager." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1120" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-78" value="Create, view, update, and delete trip managers." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="1120" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-79" value="View, update, and delete trip invoices and payments." style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="1120" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-80" value="Access total invoices and payment receipts for all trips" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="1110" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-82" value="View trip coordinator details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2090" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-83" value="Add trip coordinator to database" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2000" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-84" value="Edit trip coordinator&amp;nbsp;details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-85" value="Delete trip coordinator&amp;nbsp;from database" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-86" value="Assign trip coordinator to trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="2000" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-87" value="View trip coordinator to trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="2090" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-88" value="Delete trip coordinator from trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="2180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-89" value="Trip manager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="2080" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-92" value="Generate total invoices for a trip" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="2090" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-93" value="View trip manager details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-94" value="Add trip manager to database" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2410" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-95" value="Edit trip manager details" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2590" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-96" value="Delete trip manager from database" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="2690" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-97" value="Administrator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="2520" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-100" value="View trip invoices and payments" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="2500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-102" value="Edit trip invoices and payments" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="2590" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-103" value="Delete trip invoices and payments" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="2690" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-104" value="Access total invoices and payment receipts for all trips" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="2500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-105" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.008;entryY=0.425;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-34" target="wh8bpn0YN4yziQ9TIbQ0-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="210" as="sourcePoint" />
+            <mxPoint x="230" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-106" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="wh8bpn0YN4yziQ9TIbQ0-34" target="wh8bpn0YN4yziQ9TIbQ0-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="380" as="sourcePoint" />
+            <mxPoint x="250" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hrPoILadW02tqHUXYrE0-107" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="hrPoILadW02tqHUXYrE0-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="113" y="270" as="sourcePoint" />
+            <mxPoint x="535" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
