@@ -274,7 +274,7 @@ display_existing_passengers()
 
 # Button to edit selected passenger
 edit_button = tk.Button(root, text="Edit Selected Passenger", command=handle_edit_passenger)
-edit_button.grid(row=2, column=2, columnspan=2, padx=10, pady=10)
+edit_button.grid(row=2, column=0, padx=10, pady=10)
 
 # Configure grid weights for responsive layout
 root.grid_rowconfigure(1, weight=1)
