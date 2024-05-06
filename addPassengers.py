@@ -10,7 +10,6 @@ entry_gender = None
 entry_email = None
 entry_phone_number = None
 entry_address = None
-selected_passenger_id = None  # Track selected passenger ID
 
 # Function to establish connection to MySQL database
 def connect_to_database():
@@ -36,9 +35,9 @@ def display_passengers():
         messagebox.showerror("Error", f"Error fetching passenger details: {e}")
         return []
 
-# Function to handle form submission and database update (for both add and edit operations)
+# Function to handle form submission and database update
 def submit_details():
-    global entry_first_name, entry_last_name, entry_dob, entry_gender, entry_email, entry_phone_number, entry_address, selected_passenger_id
+    global entry_first_name, entry_last_name, entry_dob, entry_gender, entry_email, entry_phone_number, entry_address
 
     first_name = entry_first_name.get()
     last_name = entry_last_name.get()
@@ -61,20 +60,11 @@ def submit_details():
         messagebox.showerror("Error", "Please enter a valid phone number.")
         return
 
-    if selected_passenger_id:
-        # Update existing passenger details
-        update_passenger_details(selected_passenger_id, first_name, last_name, dob, gender, email, phone_number, address)
-    else:
-        # Insert new passenger details
-        insert_passenger_details(first_name, last_name, dob, gender, email, phone_number, address)
-
-    # Clear entry fields after submission
+    insert_passenger_details(first_name, last_name, dob, gender, email, phone_number, address)
     clear_entry_fields()
-
-    # Refresh displayed passengers
     display_existing_passengers()
 
-# Function to insert new passenger details into MySQL database
+# Function to insert passenger details into MySQL database
 def insert_passenger_details(first_name, last_name, dob, gender, email, phone_number, address):
     try:
         con = connect_to_database()
@@ -87,20 +77,6 @@ def insert_passenger_details(first_name, last_name, dob, gender, email, phone_nu
             con.close()
     except pymysql.Error as e:
         messagebox.showerror("Error", f"Error adding passenger details: {e}")
-
-# Function to update existing passenger details in MySQL database
-def update_passenger_details(passenger_id, first_name, last_name, dob, gender, email, phone_number, address):
-    try:
-        con = connect_to_database()
-        if con:
-            cur = con.cursor()
-            query = "UPDATE passengers SET first_name=%s, last_name=%s, dob=%s, gender=%s, email=%s, phone_number=%s, address=%s WHERE id=%s"
-            cur.execute(query, (first_name, last_name, dob, gender, email, phone_number, address, passenger_id))
-            con.commit()
-            messagebox.showinfo("Success", "Passenger details updated successfully!")
-            con.close()
-    except pymysql.Error as e:
-        messagebox.showerror("Error", f"Error updating passenger details: {e}")
 
 # Function to validate email format
 def validate_email(email):
@@ -141,93 +117,11 @@ def clear_entry_fields():
     entry_address.delete(0, tk.END)
     selected_passenger_id = None  # Reset selected passenger ID
 
-# Function to update existing passenger details in MySQL database
-def update_passenger_details():
-    global selected_passenger_id, entry_first_name, entry_last_name, entry_dob, entry_gender, entry_email, entry_phone_number, entry_address
-
-    passenger_id = selected_passenger_id
-    if not passenger_id:
-        messagebox.showwarning("Warning", "Please select a passenger to update.")
-        return
-
-    first_name = entry_first_name.get()
-    last_name = entry_last_name.get()
-    dob = entry_dob.get()
-    gender = entry_gender.get()
-    email = entry_email.get()
-    phone_number = entry_phone_number.get()
-    address = entry_address.get()
-
-    # Validate input data
-    if not first_name or not last_name or not dob or not gender or not email or not phone_number or not address:
-        messagebox.showerror("Error", "Please fill out all fields.")
-        return
-
-    if not validate_email(email):
-        messagebox.showerror("Error", "Please enter a valid email address.")
-        return
-
-    if not validate_phone_number(phone_number):
-        messagebox.showerror("Error", "Please enter a valid phone number.")
-        return
-
-    try:
-        con = connect_to_database()
-        if con:
-            cur = con.cursor()
-            query = "UPDATE passengers SET first_name=%s, last_name=%s, dob=%s, gender=%s, email=%s, phone_number=%s, address=%s WHERE id=%s"
-            cur.execute(query, (first_name, last_name, dob, gender, email, phone_number, address, passenger_id))
-            con.commit()
-            messagebox.showinfo("Success", "Passenger details updated successfully!")
-            con.close()
-            # Clear entry fields after successful update
-            clear_entry_fields()
-            # Refresh displayed passengers
-            display_existing_passengers()
-    except pymysql.Error as e:
-        messagebox.showerror("Error", f"Error updating passenger details: {e}")
-
-
-def choose_passenger():
-    selected_item = tree.focus()
-    if not selected_item:
-        messagebox.showwarning("Warning", "Please select a passenger to edit.")
-        return
-
-    passenger_details = tree.item(selected_item, "values")
-    if not passenger_details:
-        messagebox.showwarning("Warning", "Invalid selection. Please try again.")
-        return
-
-    # Extract passenger details
-    passenger_id, first_name, last_name, dob, gender, email, phone_number, address = passenger_details
-
-    # Populate entry fields with selected passenger details
-    entry_first_name.delete(0, tk.END)
-    entry_first_name.insert(0, first_name)
-    entry_last_name.delete(0, tk.END)
-    entry_last_name.insert(0, last_name)
-    entry_dob.delete(0, tk.END)
-    entry_dob.insert(0, dob)
-    entry_gender.set(gender)
-    entry_email.delete(0, tk.END)
-    entry_email.insert(0, email)
-    entry_phone_number.delete(0, tk.END)
-    entry_phone_number.insert(0, phone_number)
-    entry_address.delete(0, tk.END)
-    entry_address.insert(0, address)
-
-    # Set selected passenger ID for update operation
-    global selected_passenger_id
-    selected_passenger_id = passenger_id
-
-
-
 
 
 # Create main tkinter window
 root = tk.Tk()
-root.title("Add/Edit Passenger Details")
+root.title("Add Passenger Details")
 
 # Set window size and position
 window_width = 1300  # Total window width
@@ -239,7 +133,7 @@ y_position = (screen_height - window_height) // 2
 root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
 # Text label above the data entry area
-entry_label = tk.Label(root, text="Please fill out the passenger details:")
+entry_label = tk.Label(root, text="Please fill out the new passenger details:")
 entry_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
 
 # Frame for data entry area
@@ -277,24 +171,8 @@ for i, field in enumerate(fields):
         entry_address = entry
 
 # Create and place the submit button within the entry frame
-submit_button = tk.Button(entry_frame, text="Add Passengers", command=submit_details)
+submit_button = tk.Button(entry_frame, text="Add Passenger", command=submit_details)
 submit_button.grid(row=len(fields), column=0, columnspan=2, padx=10, pady=10)
-
-# Edit Passenger Text Label
-edit_passenger_label = tk.Label(entry_frame, text="Edit Passenger Details:")
-edit_passenger_label.grid(row=len(fields)+1, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
-
-# Choose Passenger Button
-choose_passenger_button = tk.Button(entry_frame, text="Choose Passenger", command=choose_passenger)
-choose_passenger_button.grid(row=len(fields)+2, column=0, columnspan=1, padx=10, pady=10, sticky="ew")
-
-
-# Update Passenger Button
-update_passenger_button = tk.Button(entry_frame, text="Update Passenger", command=update_passenger_details)
-update_passenger_button.grid(row=len(fields) + 2, column=1, columnspan=1, padx=10, pady=10, sticky="ew")
-
-
-
 
 # Text label above the result area
 result_label = tk.Label(root, text="These are the existing passengers in the database:")
@@ -302,7 +180,7 @@ result_label.grid(row=0, column=2, columnspan=2, padx=10, pady=10, sticky="nsew"
 
 # Frame for result area
 result_frame = tk.Frame(root)
-result_frame.grid(row=1, column=2, columnspan=2, padx=10, pady=10, sticky="nsew")
+result_frame.grid(row=1, column=2, padx=10, pady=10, sticky="nsew")
 
 # Create Treeview widget to display passenger details
 tree = ttk.Treeview(result_frame, columns=["ID"] + fields, show="headings")
@@ -331,6 +209,7 @@ def display_existing_passengers():
     # Insert retrieved data into the Treeview
     for passenger in passengers:
         tree.insert("", "end", values=passenger)
+
 
 # Display existing passenger details initially
 display_existing_passengers()
