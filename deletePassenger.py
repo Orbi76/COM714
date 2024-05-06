@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import pymysql
 
-# Global variables for entry widgets and selected passenger ID
+# Global variables for entry widgets
 entry_first_name = None
 entry_last_name = None
 entry_dob = None
@@ -10,7 +10,7 @@ entry_gender = None
 entry_email = None
 entry_phone_number = None
 entry_address = None
-selected_passenger_id = None
+selected_passenger_id = None  # Track selected passenger ID
 
 # Function to establish connection to MySQL database
 def connect_to_database():
@@ -36,7 +36,7 @@ def display_passengers():
         messagebox.showerror("Error", f"Error fetching passenger details: {e}")
         return []
 
-# Function to handle form submission and database update
+# Function to handle form submission and database update (for both add and edit operations)
 def submit_details():
     global entry_first_name, entry_last_name, entry_dob, entry_gender, entry_email, entry_phone_number, entry_address, selected_passenger_id
 
@@ -62,14 +62,19 @@ def submit_details():
         return
 
     if selected_passenger_id:
+        # Update existing passenger details
         update_passenger_details(selected_passenger_id, first_name, last_name, dob, gender, email, phone_number, address)
     else:
+        # Insert new passenger details
         insert_passenger_details(first_name, last_name, dob, gender, email, phone_number, address)
 
-    display_existing_passengers()
+    # Clear entry fields after submission
     clear_entry_fields()
 
-# Function to insert passenger details into MySQL database
+    # Refresh displayed passengers
+    display_existing_passengers()
+
+# Function to insert new passenger details into MySQL database
 def insert_passenger_details(first_name, last_name, dob, gender, email, phone_number, address):
     try:
         con = connect_to_database()
@@ -89,7 +94,7 @@ def update_passenger_details(passenger_id, first_name, last_name, dob, gender, e
         con = connect_to_database()
         if con:
             cur = con.cursor()
-            query = "UPDATE passengers SET first_name = %s, last_name = %s, dob = %s, gender = %s, email = %s, phone_number = %s, address = %s WHERE id = %s"
+            query = "UPDATE passengers SET first_name=%s, last_name=%s, dob=%s, gender=%s, email=%s, phone_number=%s, address=%s WHERE id=%s"
             cur.execute(query, (first_name, last_name, dob, gender, email, phone_number, address, passenger_id))
             con.commit()
             messagebox.showinfo("Success", "Passenger details updated successfully!")
@@ -97,31 +102,34 @@ def update_passenger_details(passenger_id, first_name, last_name, dob, gender, e
     except pymysql.Error as e:
         messagebox.showerror("Error", f"Error updating passenger details: {e}")
 
-# Function to delete a passenger from MySQL database
-def delete_passenger():
-    global selected_passenger_id
+# Function to validate email format
+def validate_email(email):
+    import re
+    email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    return re.match(email_pattern, email)
 
-    if not selected_passenger_id:
-        messagebox.showwarning("Warning", "Please select a passenger to delete.")
-        return
+# Function to validate phone number format
+def validate_phone_number(phone_number):
+    import re
+    # Define the regular expression pattern for UK phone numbers
+    # This pattern covers common UK phone number formats and enforces a length restriction
+    phone_pattern = r"^(?:(?:\+44\s?|0)(?:\d{3}\s?\d{3}\s?\d{4}|\d{2}\s?\d{4}\s?\d{4}|\d{4}\s?\d{4}|\d{5}\s?\d{3}\s?\d{3}|\d{4}\s?\d{2}\s?\d{3}))$"
 
-    confirmation = messagebox.askyesno("Confirm Deletion", "Are you sure you want to delete this passenger?")
-    if confirmation:
-        try:
-            con = connect_to_database()
-            if con:
-                cur = con.cursor()
-                query = "DELETE FROM passengers WHERE id = %s"
-                cur.execute(query, (selected_passenger_id,))
-                con.commit()
-                messagebox.showinfo("Success", "Passenger deleted successfully!")
-                con.close()
-                display_existing_passengers()  # Refresh the list after deletion
-                clear_entry_fields()  # Clear entry fields after deletion
-        except pymysql.Error as e:
-            messagebox.showerror("Error", f"Error deleting passenger: {e}")
+    # Define the desired minimum and maximum lengths for the phone number (excluding spaces)
+    min_length = 10  # Minimum length (excluding spaces)
+    max_length = 15  # Maximum length (excluding spaces)
 
-# Function to clear entry fields after submission or deletion
+    # Remove spaces from the phone number string
+    phone_number_no_spaces = phone_number.replace(" ", "")
+
+    # Check if the phone number matches the pattern and falls within the length range
+    if (re.match(phone_pattern, phone_number) and
+            min_length <= len(phone_number_no_spaces) <= max_length):
+        return True
+    else:
+        return False
+
+# Function to clear entry fields
 def clear_entry_fields():
     global entry_first_name, entry_last_name, entry_dob, entry_gender, entry_email, entry_phone_number, entry_address, selected_passenger_id
     entry_first_name.delete(0, tk.END)
@@ -133,12 +141,55 @@ def clear_entry_fields():
     entry_address.delete(0, tk.END)
     selected_passenger_id = None  # Reset selected passenger ID
 
-# Function to handle edit button click (populate entry fields with selected passenger details)
-def handle_edit_passenger():
-    global entry_first_name, entry_last_name, entry_dob, entry_gender, entry_email, entry_phone_number, entry_address, selected_passenger_id
+# Function to update existing passenger details in MySQL database
+def update_passenger_details():
+    global selected_passenger_id, entry_first_name, entry_last_name, entry_dob, entry_gender, entry_email, entry_phone_number, entry_address
 
-    # Get selected passenger details from Treeview
-    selected_item = tree.focus()  # Get item ID of selected row
+    passenger_id = selected_passenger_id
+    if not passenger_id:
+        messagebox.showwarning("Warning", "Please select a passenger to update.")
+        return
+
+    first_name = entry_first_name.get()
+    last_name = entry_last_name.get()
+    dob = entry_dob.get()
+    gender = entry_gender.get()
+    email = entry_email.get()
+    phone_number = entry_phone_number.get()
+    address = entry_address.get()
+
+    # Validate input data
+    if not first_name or not last_name or not dob or not gender or not email or not phone_number or not address:
+        messagebox.showerror("Error", "Please fill out all fields.")
+        return
+
+    if not validate_email(email):
+        messagebox.showerror("Error", "Please enter a valid email address.")
+        return
+
+    if not validate_phone_number(phone_number):
+        messagebox.showerror("Error", "Please enter a valid phone number.")
+        return
+
+    try:
+        con = connect_to_database()
+        if con:
+            cur = con.cursor()
+            query = "UPDATE passengers SET first_name=%s, last_name=%s, dob=%s, gender=%s, email=%s, phone_number=%s, address=%s WHERE id=%s"
+            cur.execute(query, (first_name, last_name, dob, gender, email, phone_number, address, passenger_id))
+            con.commit()
+            messagebox.showinfo("Success", "Passenger details updated successfully!")
+            con.close()
+            # Clear entry fields after successful update
+            clear_entry_fields()
+            # Refresh displayed passengers
+            display_existing_passengers()
+    except pymysql.Error as e:
+        messagebox.showerror("Error", f"Error updating passenger details: {e}")
+
+
+def choose_passenger():
+    selected_item = tree.focus()
     if not selected_item:
         messagebox.showwarning("Warning", "Please select a passenger to edit.")
         return
@@ -166,39 +217,40 @@ def handle_edit_passenger():
     entry_address.delete(0, tk.END)
     entry_address.insert(0, address)
 
-    selected_passenger_id = passenger_id  # Set selected passenger ID
+    # Set selected passenger ID for update operation
+    global selected_passenger_id
+    selected_passenger_id = passenger_id
 
-def validate_email(email):
-    import re
-    email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-    return re.match(email_pattern, email)
+# Function to delete a passenger from MySQL database
+def delete_passenger():
+    global selected_passenger_id
 
-# Function to validate phone number format
-def validate_phone_number(phone_number):
-    import re
-    # Define the regular expression pattern for UK phone numbers
-    # This pattern covers common UK phone number formats and enforces a length restriction
-    phone_pattern = r"^(?:(?:\+44\s?|0)(?:\d{3}\s?\d{3}\s?\d{4}|\d{2}\s?\d{4}\s?\d{4}|\d{4}\s?\d{4}|\d{5}\s?\d{3}\s?\d{3}|\d{4}\s?\d{2}\s?\d{3}))$"
+    if not selected_passenger_id:
+        messagebox.showwarning("Warning", "Please select a passenger to delete.")
+        return
 
-    # Define the desired minimum and maximum lengths for the phone number (excluding spaces)
-    min_length = 10  # Minimum length (excluding spaces)
-    max_length = 15  # Maximum length (excluding spaces)
+    confirmation = messagebox.askyesno("Confirm Deletion", "Are you sure you want to delete this passenger?")
+    if confirmation:
+        try:
+            con = connect_to_database()
+            if con:
+                cur = con.cursor()
+                query = "DELETE FROM passengers WHERE id = %s"
+                cur.execute(query, (selected_passenger_id,))
+                con.commit()
+                messagebox.showinfo("Success", "Passenger deleted successfully!")
+                con.close()
+                display_existing_passengers()  # Refresh the list after deletion
+                clear_entry_fields()  # Clear entry fields after deletion
+        except pymysql.Error as e:
+            messagebox.showerror("Error", f"Error deleting passenger: {e}")
 
-    # Remove spaces from the phone number string
-    phone_number_no_spaces = phone_number.replace(" ", "")
-
-    # Check if the phone number matches the pattern and falls within the length range
-    if (re.match(phone_pattern, phone_number) and
-            min_length <= len(phone_number_no_spaces) <= max_length):
-        return True
-    else:
-        return False
 
 
 
 # Create main tkinter window
 root = tk.Tk()
-root.title("Passenger Details")
+root.title("Add/Edit/Delete Passenger Details")
 
 # Set window size and position
 window_width = 1300  # Total window width
@@ -210,7 +262,7 @@ y_position = (screen_height - window_height) // 2
 root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
 # Text label above the data entry area
-entry_label = tk.Label(root, text="Please fill out the new passenger details:")
+entry_label = tk.Label(root, text="Please fill out the passenger details:")
 entry_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
 
 # Frame for data entry area
@@ -248,16 +300,27 @@ for i, field in enumerate(fields):
         entry_address = entry
 
 # Create and place the submit button within the entry frame
-submit_button = tk.Button(entry_frame, text="Submit", command=submit_details)
+submit_button = tk.Button(entry_frame, text="Add Passengers", command=submit_details)
 submit_button.grid(row=len(fields), column=0, columnspan=2, padx=10, pady=10)
 
-# Button for editing selected passenger details
-edit_button = tk.Button(root, text="Edit Selected Passenger", command=handle_edit_passenger)
-edit_button.grid(row=2, column=0, padx=10, pady=10)
+# Edit Passenger Text Label
+edit_passenger_label = tk.Label(entry_frame, text="Edit Passenger Details:")
+edit_passenger_label.grid(row=len(fields)+1, column=0, columnspan=2, padx=10, pady=5, sticky="ew")
 
-# Button for deleting selected passenger
-delete_button = tk.Button(root, text="Delete Selected Passenger", command=delete_passenger)
-delete_button.grid(row=2, column=2, padx=10, pady=10)
+# Choose Passenger Button
+choose_passenger_button = tk.Button(entry_frame, text="Choose Passenger", command=choose_passenger)
+choose_passenger_button.grid(row=len(fields)+2, column=0, columnspan=1, padx=10, pady=10, sticky="ew")
+
+
+# Update Passenger Button
+update_passenger_button = tk.Button(entry_frame, text="Update Passenger", command=update_passenger_details)
+update_passenger_button.grid(row=len(fields) + 2, column=1, columnspan=1, padx=10, pady=10, sticky="ew")
+
+# Delete Passenger Button
+delete_passenger_button = tk.Button(entry_frame, text="Delete Passenger", command=delete_passenger)
+delete_passenger_button.grid(row=len(fields) + 3, column=1, columnspan=1, padx=10, pady=10, sticky="ew")
+
+
 
 # Text label above the result area
 result_label = tk.Label(root, text="These are the existing passengers in the database:")
