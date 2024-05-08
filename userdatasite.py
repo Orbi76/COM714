@@ -236,7 +236,7 @@ def delete_user():
 # Create the main Tkinter window
 root = tk.Tk()
 root.title("User Management System")
-root.geometry("800x500")
+root.geometry("1400x600")
 
 # Add/manage user details section
 tk.Label(root, text="Add/Manage User Details", font=("Helvetica", 14, "bold")).grid(row=0, column=0, columnspan=2, pady=10)
